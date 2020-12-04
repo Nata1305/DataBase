@@ -4,11 +4,9 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/userName_userLastName_View"
+        android:id="@+id/userName_userLastname_View"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="24sp"
         android:text="TextView" />
-
-
 </LinearLayout>

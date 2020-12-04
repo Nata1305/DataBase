@@ -1,14 +1,14 @@
 package com.example.myapplicationfragments;
 
+import java.io.Serializable;
 import java.util.UUID;
 
-public class User {
+public class User implements Serializable {
     private String userName;
     private String userLastName;
     private UUID uuid;
 
     public User() {
-
         this.uuid = UUID.randomUUID();
     }
 
@@ -31,6 +31,4 @@ public class User {
     public UUID getUuid() {
         return uuid;
     }
-
-
 }
