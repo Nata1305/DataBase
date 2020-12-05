@@ -20,26 +20,26 @@ import java.io.Serializable;
 
 
 public class MainActivity extends AppCompatActivity {
+    FragmentManager fragmentManager=getSupportFragmentManager();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        FragmentManager fragmentManager = getSupportFragmentManager();
         Fragment fragment = new UserListFragment();
         // R.id.fragmentContainer - это FrameLayout из файла activity_main.xml
-        fragmentManager.beginTransaction().add(R.id.fragmentContainer, fragment).commit();
+        fragmentManager.beginTransaction().add(R.id.fragmentContainer, new UserListFragment(),"main_fragment").commit();
     }
 
 
 
      @Override
     public void onBackPressed() {
-         //super.onBackPressed();
-         FragmentManager fragmentManager=getSupportFragmentManager();
-         Fragment fragment=new UserListFragment();
-         fragmentManager.beginTransaction().add(R.id.fragmentContainer, fragment).commit();
-         Toast.makeText(MainActivity.this,"Сейчас будет выход",Toast.LENGTH_SHORT).show();
+         Fragment currentFragment=fragmentManager.findFragmentByTag("main_fragment");
+         if (currentFragment!=null&& currentFragment.isVisible()){
+             super.onBackPressed();
+         }else
+         fragmentManager.beginTransaction().replace(R.id.fragmentContainer, new UserListFragment(),"main_fragment").commit();
   }
     public static void changeFragment(View view, com.example.myapplicationfragments.User user){
         // Получаем хостинговую активность (в нашем случае MainActivity)
