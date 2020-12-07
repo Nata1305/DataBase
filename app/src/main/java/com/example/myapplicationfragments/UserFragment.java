@@ -43,8 +43,12 @@ public class UserFragment extends Fragment {
         updateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 String newUserName=editNewName.getText().toString();
                 String newUserLastName=editNewLastName.getText().toString();
+                if (newUserName.trim().isEmpty()&&newUserLastName.trim().isEmpty())
+                    Toast.makeText(getActivity(),"Вы не внесли изменения.Попробуйте еще раз",Toast.LENGTH_SHORT).show();
+                else{
                 user.setUserName(newUserName);
                 user.setUserLastName(newUserLastName);
                 userList.updateUser(user);
@@ -52,7 +56,7 @@ public class UserFragment extends Fragment {
                 FragmentTransaction transaction=getFragmentManager().beginTransaction();
                 transaction.replace(R.id.fragmentContainer,list);
                 transaction.commit();
-                Toast.makeText(getActivity(),"Изменения внесены",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(),"Изменения внесены",Toast.LENGTH_SHORT).show();}
 
             }
         });

@@ -74,6 +74,7 @@ public class UserList {
 
     }
     public void updateUser(User user){
+
         String uuidString=user.getUuid().toString();
         ContentValues values=getContentValues(user);
 
