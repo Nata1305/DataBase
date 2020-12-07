@@ -81,6 +81,7 @@ public class UserList {
                 new String[]{uuidString});
     }
     public void delete (User user){
+        //для удаления данных из БД
         String uuidString=user.getUuid().toString();
         ContentValues values=getContentValues(user);
         database.delete(UserDbSchema.UserTable.NAME,UserDbSchema.UserTable.Cols.UUID+"=?",
