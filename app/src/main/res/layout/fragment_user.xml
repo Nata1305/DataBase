@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:gravity="center">
 
     <TextView
         android:id="@+id/userName_userLastname_View"
@@ -10,4 +11,27 @@
         android:layout_height="wrap_content"
         android:textSize="24sp"
         android:text="TextView" />
+    <EditText
+        android:id="@+id/editNewName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/input_new_name"/>
+      <EditText
+          android:id="@+id/editNewLastName"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:hint="@string/input_new_last_name"/>
+      <Button
+          android:id="@+id/updateBtn"
+          android:layout_width="250dp"
+          android:layout_height="wrap_content"
+          android:layout_margin="15dp"
+          android:background="#F32CFA1E"
+          android:text="@string/save_change"/>
+      <Button
+          android:id="@+id/deleteUserBtn"
+          android:layout_width="250dp"
+          android:layout_height="wrap_content"
+          android:background="#F3D11616"
+          android:text="@string/delete_user"/>
 </LinearLayout>

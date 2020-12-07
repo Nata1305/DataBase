@@ -16,7 +16,6 @@ public class UserListFragment extends Fragment {
     private RecyclerView userRecyclerView;
     private UserAdapter userAdapter;
     private Button add_user_btn_in_user_list;
-  //  private com.example.myapplicationfragments.AddNewUserFragment newUser;
 
     // Метод создаёт компонент View фрагмента из XML разментки
     @Override
@@ -26,9 +25,9 @@ public class UserListFragment extends Fragment {
         userRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         add_user_btn_in_user_list=view.findViewById(R.id.add_user_btn_in_user_list);
 
-        com.example.myapplicationfragments.UserList userList = com.example.myapplicationfragments.UserList.get();
+        com.example.myapplicationfragments.UserList userList = com.example.myapplicationfragments.UserList.get(this.getActivity());
         List<com.example.myapplicationfragments.User> users = userList.getUsers();
-        userAdapter = new UserAdapter(users);
+         userAdapter = new UserAdapter(users);
         userRecyclerView.setAdapter(userAdapter);
 
         add_user_btn_in_user_list.setOnClickListener(new View.OnClickListener() {

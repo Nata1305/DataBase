@@ -1,22 +1,12 @@
 package com.example.myapplicationfragments;
 
-import android.content.Context;
-import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
-import com.example.myapplicationfragments.R;
-import com.example.myapplicationfragments.UserFragment;
-import com.example.myapplicationfragments.UserListFragment;
-
-import java.io.Serializable;
 
 
 public class MainActivity extends AppCompatActivity {

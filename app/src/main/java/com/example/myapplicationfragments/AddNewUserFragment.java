@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 public class AddNewUserFragment extends Fragment {
     private EditText input_new_user_name;
@@ -22,7 +21,7 @@ public class AddNewUserFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.add_new_user,container,false);
+        View view = inflater.inflate(R.layout.fragment_add_new_user,container,false);
         add_new_user_btn=view.findViewById(R.id.add_new_user_btn);
         input_new_user_name=view.findViewById(R.id.input_new_user_name);
         input_new_user_lastName=view.findViewById(R.id.input_new_user_lastName);
@@ -36,7 +35,7 @@ public class AddNewUserFragment extends Fragment {
                 User user=new User();
                 user.setUserName(user_name);
                 user.setUserLastName(user_Lastname);
-                UserList userList = UserList.get();
+                UserList userList = UserList.get(getActivity());
                 userList.addUser(user);
 
                 Fragment list=new UserListFragment();

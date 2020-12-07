@@ -9,8 +9,13 @@ public class User implements Serializable {
     private UUID uuid;
 
     public User() {
-        this.uuid = UUID.randomUUID();
+        this(UUID.randomUUID());//при создании нового пользователя
     }
+    public User(UUID uuid){
+        this.uuid = uuid;// при создании сущ позльзователя
+
+    }
+
 
     public String getUserName() {
         return userName;
@@ -31,5 +36,6 @@ public class User implements Serializable {
     public UUID getUuid() {
         return uuid;
     }
+
 
 }
